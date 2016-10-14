@@ -5,6 +5,7 @@ ENV USER buildagent
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK_TOOLS_REVISION 24.4.1
 ENV ANDROID_SDK_VERSION 24
+ENV ANDROID_BUILD_TOOLS_VERSION 24.0.3 
 
 # Prepare the build agent to start as the buildagent user
 RUN apt-get install --no-install-recommends -y sudo git git-crypt \
@@ -22,4 +23,4 @@ RUN curl -o /root/lets-encrypt.der https://letsencrypt.org/certs/lets-encrypt-x3
 RUN curl https://dl.google.com/android/android-sdk_r${ANDROID_SDK_TOOLS_REVISION}-linux.tgz | tar xz -C /opt \
  && chown -R $USER:$USER $ANDROID_HOME \
  && echo y | sudo -u $USER $ANDROID_HOME/tools/android update sdk --no-ui --all --filter \
-    android-$ANDROID_SDK_VERSION,extra-android-m2repository,extra-google-m2repository
+    build-tools-$ANDROID_BUILD_TOOLS_VERSION,android-$ANDROID_SDK_VERSION,extra-android-m2repository,extra-google-m2repository
