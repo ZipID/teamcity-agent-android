@@ -24,3 +24,4 @@ RUN curl https://dl.google.com/android/android-sdk_r${ANDROID_SDK_TOOLS_REVISION
  && chown -R $USER:$USER $ANDROID_HOME \
  && echo y | sudo -u $USER $ANDROID_HOME/tools/android update sdk --no-ui --all --filter \
     build-tools-$ANDROID_BUILD_TOOLS_VERSION,android-$ANDROID_SDK_VERSION,extra-android-m2repository,extra-google-m2repository
+    
