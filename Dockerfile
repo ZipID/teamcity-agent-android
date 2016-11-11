@@ -3,9 +3,9 @@ MAINTAINER Damien Hill <damien.hill@zipid.com.au>
 
 ENV USER buildagent
 ENV ANDROID_HOME /opt/android-sdk-linux
-ENV ANDROID_SDK_TOOLS_REVISION 24.4.1
-ENV ANDROID_SDK_VERSION 24
-ENV ANDROID_BUILD_TOOLS_VERSION 24.0.3 
+ENV ANDROID_SDK_TOOLS_REVISION 25.2.2
+ENV ANDROID_SDK_VERSION 25
+ENV ANDROID_BUILD_TOOLS_VERSION 25
 
 # Prepare the build agent to start as the buildagent user
 RUN apt-get install --no-install-recommends -y sudo git git-crypt \
